@@ -24,15 +24,18 @@ class declaration {
         this.side1 = side1;
         this.side2 = side2;
         this.base = base;
+        System.out.printf("\n Traingle created successfully \n ");
     }
 
     declaration(double length, double width) {
         this.length = length;
         this.width = width;
+        System.out.printf("\n Rectangle created successfully \n ");
     }
 
     declaration(double radius) {
         this.radius = radius;
+        System.out.printf("\n Circle created successfully \n ");
     }
 
     double area(double base, float height) {
@@ -76,51 +79,43 @@ class shape {
     public static void main(String args[]) {
         int ch = 0;
         Scanner sc = new Scanner(System.in);
+        System.out.printf("\t\t----- Area and Perimeter Calculation -----");
         while (ch != 4)
-
         {
 
-            System.out.println("Enter your choice \n 1.Triangle \n 2.Rectangle \n 3.Circle \n 4.Exit ");
+            System.out.printf("\n\n 1.Triangle \n 2.Rectangle \n 3.Circle \n 4.Exit \n Enter your choice : ");
             ch = sc.nextInt();
             switch (ch) {
                 case 1: {
-                    System.out.println("\n Enter the Base Value : ");
+                    System.out.printf("\n Enter the Base Value : ");
                     double base = sc.nextDouble();
-                    System.out.println(" Enter the Lenth value : ");
-                    float height = sc.nextFloat();
-                    System.out.println("\n Enter side 1 and side 2: ");
-                    System.out.println("\n Side1 : ");
-                    double side1 = sc.nextDouble();
-                    System.out.println("\n Side2 : ");
-                    double side2 = sc.nextDouble();
-                    declaration ob = new declaration(side1, side2, base);
-                    System.out.println("Traingle created successfully ");
-                    System.out.println("Area of Triangle: " + ob.area(base, height));
-                    System.out.println("Perimeter of Triangle:" + ob.perimeter(side1, side2, base));
+                    System.out.printf(" Enter the Lenth value : ");
+                    float length = sc.nextFloat();
+                    System.out.printf(" Enter the Hypotenuse : ");
+                    double Hypotenuse = sc.nextDouble();
+                    declaration ob = new declaration(base ,length , Hypotenuse);
+                    System.out.printf("\n Area of Triangle : " + ob.area(base, length));
+                    System.out.printf("\n Perimeter of Tri angle : " + ob.perimeter(base ,length , Hypotenuse));
                 }
                     break;
 
                 case 2: {
-                    System.out.println("\n Enter the Length Value : ");
+                    System.out.printf("\n Enter the Length Value : ");
                     double length = sc.nextDouble();
-                    System.out.println(" Enter the Width Value : ");
+                    System.out.printf(" Enter the Width Value : ");
                     double width = sc.nextDouble();
                     declaration ob = new declaration(length, width);
-                    System.out.println("Rectangle created successfully ");
-                    System.out.println("Area of Rectangle:" + ob.area(length, width));
-                    System.out.println("Perimeter of Rectangle:" + ob.perimeter(length, width));
+                    System.out.printf("\n Area of Rectangle : " + ob.area(length, width));
+                    System.out.printf("\n Perimeter of Rectangle : " + ob.perimeter(length, width));
                 }
                     break;
 
-                case 3:
-
-                {
-                    System.out.println("\n Enter the Radius Value : ");
+                case 3: {
+                    System.out.printf("\n Enter the Radius Value : ");
                     double radius = sc.nextDouble();
                     declaration ob = new declaration(radius);
-                    System.out.println("Circle created successfully ");
-                    System.out.println("Area of Circle:" + ob.area(radius));
-                    System.out.println("Perimeter of Circle:" + ob.perimeter(radius));
+                    System.out.printf("\n Area of Circle : " + ob.area(radius));
+                    System.out.printf("\n Perimeter of Circle : " + ob.perimeter(radius));
                 }
                     break;
                 case 4:
@@ -128,7 +123,7 @@ class shape {
                     break;
 
                 default:
-                    System.out.println("\n Invalid Choice");
+                    System.out.printf("\n Invalid Choice");
                     break;
             }
         }
